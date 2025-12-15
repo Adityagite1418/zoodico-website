@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Zoodico Pharma</title>
+
+    <!-- Main & Contact Page CSS -->
+    <link rel="stylesheet" href="Main_Page.css" /> 
+    <link rel="stylesheet" href="Contact_page.css" /> 
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="Images/Logo/Zoodico_Logo.jpeg" alt="Zoodico Pharma Logo" />
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_page.html">About Us</a></li>
+                    <li><a href="Products_page.html">Products</a></li>
+                    <li><a href="Contact_page.html" class="active">Contact Us</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- ================= CONTACT BANNER ================= -->
+    <section class="contact-banner">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We're here to answer your questions regarding products, partnerships, or careers.</p>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Status Message -->
+            <div class="feedback-message-container">
+                <div id="statusMessage"></div>
+            </div>
+            
+            <div class="contact-grid">
+                
+                <!-- Contact Details -->
+                <div class="contact-details">
+                    <h2>Our Global Headquarters</h2>
+
+                    <div class="details-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Zoodico Pharma <br> Building A, Flat 605, Madhupushpa Apartment, Pune.</p>
+                    </div>
+
+                    <div class="details-group">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+91 7350469095</p>
+                    </div>
+
+                    <div class="details-group">
+                        <i class="fas fa-envelope"></i>
+                        <p>zoodicopharma1212@gmail.com</p>
+                    </div>
+
+                    <div class="map-container">
+                        <!-- Add Google Map iframe here -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© 2025 Zoodico Pharma | zoodicopharma1212@gmail.com</p>
+        </div>
+    </footer>
+
+
+    <!-- ================= CHATBOT WIDGET ================= -->
+    <div id="chatbot-widget">
+        <button id="chat-toggle" aria-label="Open chat window">
+            <i class="fas fa-comments"></i>
+        </button>
+
+        <div id="chat-window" class="chat-closed">
+
+            <div class="chat-header">
+                <h3>Zoodico Chat Support</h3>
+                <p>We're here to help! Ask us anything.</p>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <div class="message bot-message">
+                    <p>Hello! Welcome to Zoodico Pharma. How can I assist you today?</p>
+                </div>
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Loading chat..." disabled>
+                <button id="chat-send" disabled><i class="fas fa-arrow-up"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= SCRIPT ================= -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById("menuBtn");
+        const nav = document.querySelector(".nav ul");
+        menuBtn.onclick = () => nav.classList.toggle("show");
+
+        // Form Status Message Handler
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const statusMessageDiv = document.getElementById('statusMessage');
+
+        if (status === 'success') {
+            statusMessageDiv.innerHTML = '<p class="success-alert"><i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.</p>';
+        } else if (status === 'error') {
+            statusMessageDiv.innerHTML = '<p class="error-alert"><i class="fas fa-exclamation-triangle"></i> Oops! Something went wrong. Please try again.</p>';
+        }
+
+        // Chatbot Script
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+        const chatBody = document.getElementById('chat-body');
+
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('chat-closed');
+            chatToggle.innerHTML = chatWindow.classList.contains('chat-closed')
+            ? '<i class="fas fa-comments"></i>'
+            : '<i class="fas fa-times"></i>';
+        });
+
+        const mockReply = () => {
+            const message = document.createElement('div');
+            message.classList.add('message', 'bot-message');
+            message.innerHTML = '<p>Thanks for messaging us! Our support team will get back to you soon.</p>';
+            chatBody.appendChild(message);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        };
+
+        const sendMessage = () => {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.classList.add('message', 'user-message');
+            userMsg.innerHTML = `<p>${text}</p>`;
+            chatBody.appendChild(userMsg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            chatInput.value = '';
+            setTimeout(mockReply, 1200);
+        };
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', e => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        setTimeout(() => {
+            chatInput.disabled = false;
+            chatSend.disabled = false;
+            chatInput.placeholder = "Type your message...";
+        }, 800);
+    </script>
+
+</body>
+</html>

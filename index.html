@@ -1,0 +1,79 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Zoodico Pharma</title>
+    <link rel="stylesheet" href="Main_Page.css" />
+  </head>   
+  <body>
+    <!-- Header --> 
+    <header class="header">
+      <div class="container nav-container">
+        <div class="logo">
+           <img src="Images/Logo/Zoodico_Logo.jpeg" alt="Zoodico Pharma Logo" />
+        </div>
+
+        <nav class="nav">
+          <ul>
+            <!-- <li><a href="Main_Page.html" class="active">Home</a></li> -->
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="About_page.html">About Us</a></li>
+            <li><a href="Products_page.html">Products</a></li>
+            <li><a href="Contact_page.html">Contact Us</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </nav>
+
+        <button class="menu-toggle" id="menuBtn">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero Section --> 
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Innovating for a Healthier World</h1>
+        <p>Delivering high-quality and affordable medicines globally.</p>
+        <a href="Products_page.html" class="btn">Explore Products</a>
+      </div>
+    </section>
+
+    <!-- Products Section --> 
+   <!--  <section id="products" class="section light">
+      <div class="container">
+        <h2>Our Products</h2>
+        <div class="grid-3">
+          <div class="card">
+            <img src="../Image/BackGround/image_1.png" alt="Cardiology" />
+            <h3>Cardiology</h3>
+            <p>Innovative therapies for heart health.</p>
+          </div>
+          <div class="card">
+            <img src="../Image/BackGround/image_2.png" alt="Dermatology" />
+            <h3>Dermatology</h3>
+            <p>Advanced skincare solutions.</p>
+          </div>
+          <div class="card">
+            <img src="../Image/BackGround/image_1.png" alt="Oncology" />
+            <h3>Oncology</h3>
+            <p>Improving lives with cancer care treatments.</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <p>© 2025 Zoodico Pharma | zoodicopharma1212@gmail.com</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const nav = document.querySelector(".nav ul");
+      menuBtn.onclick = () => nav.classList.toggle("show");
+    </script>
+  </body>
+  </html>

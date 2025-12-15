@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products | Zoodico Pharma</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Products_page.css" /> 
+
+    <meta name="description" content="Zoodico Pharma — Products catalogue: APIs, Peptides, Granules & more." />
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="Images/Logo/Zoodico_Logo.jpeg" alt="Zoodico Pharma Logo" />
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_page.html" >About Us</a></li>
+                    <li><a href="Products_page.html" class="active">Products</a></li>
+                    <li><a href="Contact_page.html">Contact Us</a></li>
+                    <li><a href="index.html#media">Media</a></li>
+                    <li><a href="index.html#careers">Careers</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="nav-list">☰</button>
+        </div>
+    </header>
+
+    <section class="prod-banner" aria-labelledby="banner-heading">
+        <div class="prod-banner-overlay" aria-hidden="true"></div>
+        <div class="prod-banner-content">
+            <h1 id="banner-heading">Our Pharmaceutical Range</h1>
+            <p>Trusted formulations developed with precision and care.</p>
+        </div>
+    </section>
+
+    <main class="prod-section" id="main" role="main">
+        <div class="container">
+            <h2 class="prod-title">Therapeutic Categories</h2>
+
+            <div class="prod-grid" role="list">
+
+                <article class="prod-card prod-card-image prod-card-api" role="listitem">
+                    <button class="prod-card-content open-modal" data-modal="modal-api" aria-haspopup="dialog" aria-controls="modal-api">
+                        <h3>Pharmaceutical API’s</h3>
+                        <span class="view-btn" aria-hidden="true">View list & search</span>
+                    </button>
+                </article>
+
+                <article class="prod-card prod-card-image prod-card-granules" role="listitem">
+                    <button class="prod-card-content open-modal" data-modal="modal-granules" aria-haspopup="dialog" aria-controls="modal-granules">
+                        <h3>Granules &amp; Pellets</h3>
+                        <span class="view-btn" aria-hidden="true">View list & search</span>
+                    </button>
+                </article>
+
+                <article class="prod-card prod-card-image prod-card-peptides" role="listitem">
+                    <button class="prod-card-content open-modal" data-modal="modal-peptides" aria-haspopup="dialog" aria-controls="modal-peptides">
+                        <h3>Peptides</h3>
+                        <span class="view-btn" aria-hidden="true">View list & search</span>
+                    </button>
+                </article>
+
+                <article class="prod-card prod-card-image prod-card-nutra" role="listitem">
+                    <button class="prod-card-content open-modal" data-modal="modal-nutraceuticals" aria-haspopup="dialog" aria-controls="modal-nutraceuticals">
+                        <h3>Nutraceuticals &amp; Herbal Products</h3>
+                        <span class="view-btn" aria-hidden="true">View list & search</span>
+                    </button>
+                </article>
+
+                <article class="prod-card prod-card-image prod-card-impurities" role="listitem">
+                    <button class="prod-card-content open-modal" data-modal="modal-impurities" aria-haspopup="dialog" aria-controls="modal-impurities">
+                        <h3>Impurities</h3>
+                        <span class="view-btn" aria-hidden="true">View list &amp; search</span>
+                    </button>
+                </article>
+                <article class="prod-card prod-card-image prod-card-cbd" role="listitem">
+                    <button class="prod-card-content open-modal" data-modal="modal-cbd" aria-haspopup="dialog" aria-controls="modal-cbd">
+                        <h3>CBD Products</h3>
+                        <span class="view-btn" aria-hidden="true">View list &amp; search</span>
+                    </button>
+                </article>
+                </div>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <p>© 2025 Zoodico Pharma  | zoodicopharma1212@gmail.com</p>
+        </div>
+    </footer>
+
+    <div id="modal-api" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-api-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-api-desc">
+            <header class="modal-header">
+                <h3 id="modal-api-title">Pharmaceutical API’s</h3>
+                <button class="modal-close" data-close="true" aria-label="Close API modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-api-desc" class="visually-hidden">Search the API table by name. Results update as you type.</p>
+                <div class="modal-search" role="search" aria-label="Search API list">
+                    <input id="api-search" class="modal-search-input modal-search-input--api modal-search-input" type="search" placeholder="Search API (e.g. Abacavir, Caffeine)" aria-label="Search APIs" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#api-search" aria-label="Clear API search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="api-table" class="modal-table" role="table" aria-label="API table">
+                        <thead>
+                            <tr>
+                                <th scope="col">API name</th>
+                                <th scope="col">Salt / Variant</th>
+                                <th scope="col">Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Abacavir</td><td>Abacavir sulfate</td><td>Antiretroviral</td></tr>
+                            <tr><td>Caffeine</td><td>Caffeine citrate</td><td>Stimulant</td></tr>
+                            <tr><td>Metformin</td><td>Metformin HCl</td><td>Antidiabetic</td></tr>
+                            <tr><td>Amoxicillin</td><td>Amoxicillin trihydrate</td><td>Antibiotic</td></tr>
+                            <tr><td>Atorvastatin</td><td>Atorvastatin calcium</td><td>Cardiometabolic</td></tr>
+                            <tr><td>Sertraline</td><td>Sertraline HCl</td><td>Antidepressant</td></tr>
+                            <tr><td>Omeprazole</td><td>Omeprazole magnesium</td><td>Gastrointestinal</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+
+    <div id="modal-peptides" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-peptides-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-peptides-desc">
+            <header class="modal-header">
+                <h3 id="modal-peptides-title">Peptides</h3>
+                <button class="modal-close" data-close="true" aria-label="Close peptides modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-peptides-desc" class="visually-hidden">Search the peptides table by name. Results update as you type.</p>
+                <div class="modal-search" role="search" aria-label="Search peptides list">
+                    <input id="peptides-search" class="modal-search-input modal-search-input--peptides modal-search-input" type="search" placeholder="Search Peptides (e.g. Insulin, GLP-1)" aria-label="Search peptides" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#peptides-search" aria-label="Clear peptides search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="peptides-table" class="modal-table" role="table" aria-label="Peptides table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Peptide</th>
+                                <th scope="col">Length (aa)</th>
+                                <th scope="col">Primary Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Insulin (Human)</td><td>51</td><td>Diabetes</td></tr>
+                            <tr><td>Glucagon</td><td>29</td><td>Hypoglycemia</td></tr>
+                            <tr><td>Oxytocin</td><td>9</td><td>Obstetrics</td></tr>
+                            <tr><td>GLP-1 (Exenatide)</td><td>39</td><td>Diabetes</td></tr>
+                            <tr><td>Vasopressin</td><td>9</td><td>Endocrine</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+
+    <div id="modal-granules" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-granules-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-granules-desc">
+            <header class="modal-header">
+                <h3 id="modal-granules-title">Granules &amp; Pellets</h3>
+                <button class="modal-close" data-close="true" aria-label="Close granules modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-granules-desc" class="visually-hidden">Search granules &amp; pellets list by product name or description.</p>
+                <div class="modal-search" role="search" aria-label="Search granules & pellets">
+                    <input id="granules-search" class="modal-search-input" type="search" placeholder="Search Granules & Pellets (e.g. Immediate release granules)" aria-label="Search granules and pellets" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#granules-search" aria-label="Clear granules search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="granules-table" class="modal-table" role="table" aria-label="Granules and pellets table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Form</th>
+                                <th scope="col">Application</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Immediate Release Granules</td><td>Loose Granules</td><td>Oral solid dosage</td></tr>
+                            <tr><td>Controlled Release Pellets</td><td>Pelletized</td><td>Sustained release tablets</td></tr>
+                            <tr><td>Enteric Coated Pellets</td><td>Pelletized (enteric)</td><td>Gastric protection</td></tr>
+                            <tr><td>Effervescent Granules</td><td>Effervescent</td><td>Rapid dissolution</td></tr>
+                            <tr><td>Multi-particulate Pellets</td><td>Pellets</td><td>Flexible dosing</td></tr>
+                            <tr><td>Taste-masked Granules</td><td>Granules</td><td>Pediatrics</td></tr>
+                            <tr><td>Sugar-coated Pellets</td><td>Coated pellets</td><td>Improved swallowability</td></tr>
+                            <tr><td>Layered Pellets</td><td>Pellets (layered)</td><td>Combination release</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+
+    <div id="modal-nutraceuticals" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-nutraceuticals-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-nutraceuticals-desc">
+            <header class="modal-header">
+                <h3 id="modal-nutraceuticals-title">Nutraceuticals &amp; Herbal Products</h3>
+                <button class="modal-close" data-close="true" aria-label="Close nutraceuticals modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-nutraceuticals-desc" class="visually-hidden">Search nutraceuticals and herbal products by name or use.</p>
+                <div class="modal-search" role="search" aria-label="Search nutraceuticals">
+                    <input id="nutra-search" class="modal-search-input" type="search" placeholder="Search Nutraceuticals (e.g. Ashwagandha, Omega-3)" aria-label="Search nutraceuticals" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#nutra-search" aria-label="Clear nutraceuticals search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="nutra-table" class="modal-table" role="table" aria-label="Nutraceuticals table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Primary Benefit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Ashwagandha Extract</td><td>Herbal Extract</td><td>Stress support</td></tr>
+                            <tr><td>Omega-3 Capsules</td><td>Fatty acid</td><td>Cardiovascular</td></tr>
+                            <tr><td>Multivitamin Granules</td><td>Vitamins & Minerals</td><td>Daily nutrition</td></tr>
+                            <tr><td>Turmeric Curcumin</td><td>Herbal Extract</td><td>Anti-inflammatory</td></tr>
+                            <tr><td>Probiotic Sachets</td><td>Microbial</td><td>Gut health</td></tr>
+                            <tr><td>Glucosamine Sulfate</td><td>Supplement</td><td>Joint support</td></tr>
+                            <tr><td>Herbal Sleep Aid</td><td>Herbal Blend</td><td>Sleep quality</td></tr>
+                            <tr><td>Green Tea Extract</td><td>Herbal Extract</td><td>Antioxidant</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+
+    <div id="modal-neurology" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-neurology-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-neurology-desc">
+            <header class="modal-header">
+                <h3 id="modal-neurology-title">Neurology</h3>
+                <button class="modal-close" data-close="true" aria-label="Close neurology modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-neurology-desc" class="visually-hidden">Search neurology products by name or use.</p>
+                <div class="modal-search" role="search" aria-label="Search neurology">
+                    <input id="neuro-search" class="modal-search-input" type="search" placeholder="Search Neurology (e.g. Levetiracetam, Donepezil)" aria-label="Search neurology products" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#neuro-search" aria-label="Clear neurology search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="neuro-table" class="modal-table" role="table" aria-label="Neurology table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Indication</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Levetiracetam</td><td>Antiepileptic</td><td>Seizure control</td></tr>
+                            <tr><td>Donepezil</td><td>Acetylcholinesterase inhibitor</td><td>Alzheimer's disease</td></tr>
+                            <tr><td>Gabapentin</td><td>Neuropathic agent</td><td>Neuropathic pain</td></tr>
+                            <tr><td>Rivastigmine</td><td>Acetylcholinesterase inhibitor</td><td>Dementia</td></tr>
+                            <tr><td>Carbamazepine</td><td>Antiepileptic</td><td>Epilepsy</td></tr>
+                            <tr><td>Sumatriptan</td><td>Triptan</td><td>Migraine</td></tr>
+                            <tr><td>Amantadine</td><td>Antiparkinsonian</td><td>Parkinson's disease</td></tr>
+                            <tr><td>Memantine</td><td>NMDA antagonist</td><td>Moderate Alzheimer's</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+
+    <div id="modal-impurities" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-impurities-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-impurities-desc">
+            <header class="modal-header">
+                <h3 id="modal-impurities-title">Impurities</h3>
+                <button class="modal-close" data-close="true" aria-label="Close impurities modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-impurities-desc" class="visually-hidden">Search reference standards and impurities by name.</p>
+                <div class="modal-search" role="search" aria-label="Search Impurities list">
+                    <input id="impurities-search" class="modal-search-input" type="search" placeholder="Search Impurities (e.g. Amlodipine Impurity A)" aria-label="Search impurities" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#impurities-search" aria-label="Clear impurities search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="impurities-table" class="modal-table" role="table" aria-label="Impurities table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Compound</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Source / Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Metformin Impurity B</td><td>Process Impurity</td><td>Reference Standard</td></tr>
+                            <tr><td>N-Nitroso-Valsartan</td><td>Genotoxic Impurity</td><td>Analytical Standard</td></tr>
+                            <tr><td>Enalapril Related Compound C</td><td>Degradation Product</td><td>Quality Control</td></tr>
+                            <tr><td>Caffeine Dimer</td><td>Reference Impurity</td><td>Toxicity Study</td></tr>
+                            <tr><td>O-Desmethylvenlafaxine</td><td>Active Metabolite</td><td>Bio-analytical use</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+    <div id="modal-cbd" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-cbd-title">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-panel" role="document" tabindex="-1" aria-describedby="modal-cbd-desc">
+            <header class="modal-header">
+                <h3 id="modal-cbd-title">CBD Products</h3>
+                <button class="modal-close" data-close="true" aria-label="Close CBD modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <p id="modal-cbd-desc" class="visually-hidden">Search CBD products by name or type.</p>
+                <div class="modal-search" role="search" aria-label="Search CBD products">
+                    <input id="cbd-search" class="modal-search-input" type="search" placeholder="Search CBD products (e.g. Full Spectrum CBD Extract)" aria-label="Search CBD products" />
+                    <button class="btn btn-secondary" type="button" data-action="clear-search" data-target="#cbd-search" aria-label="Clear CBD search">Clear</button>
+                </div>
+                <div class="modal-table-wrapper" aria-live="polite">
+                    <table id="cbd-table" class="modal-table" role="table" aria-label="CBD products table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Form</th>
+                                <th scope="col">Primary Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Full Spectrum CBD Extract</td><td>Liquid Extract</td><td>Wellness support</td></tr>
+                            <tr><td>CBD Isolate Powder</td><td>Powder</td><td>Formulation ingredient</td></tr>
+                            <tr><td>CBD Oil 10% (Oral)</td><td>Oil</td><td>Pain & sleep support</td></tr>
+                            <tr><td>CBD Soft Gel Capsules</td><td>Capsules</td><td>Convenience dosing</td></tr>
+                            <tr><td>CBD Topical Cream</td><td>Cream</td><td>Localized relief</td></tr>
+                            <tr><td>Broad Spectrum CBD Drops</td><td>Liquid</td><td>Non-psychoactive wellness</td></tr>
+                            <tr><td>CBD Pet Drops</td><td>Liquid</td><td>Animal wellness</td></tr>
+                            <tr><td>CBD Gummies (Low-dose)</td><td>Edible</td><td>Daily wellness</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" data-close="true">Close</button>
+                <a class="btn btn-secondary" href="list.html" role="button">Open full list</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const navList = document.querySelector('.nav ul');
+            if (menuBtn && navList) {
+                menuBtn.addEventListener('click', () => {
+                    const shown = navList.classList.toggle('show');
+                    menuBtn.setAttribute('aria-expanded', shown ? 'true' : 'false');
+                });
+            }
+
+            // Modal logic
+            const openButtons = document.querySelectorAll('.open-modal');
+
+            function openModal(modal) {
+                if (!modal) return;
+                modal.setAttribute('aria-hidden', 'false');
+                modal.classList.add('is-open');
+                modal._prevFocus = document.activeElement;
+                const focusEl = modal.querySelector('.modal-search-input') || modal.querySelector('.modal-close') || modal.querySelector('button');
+                document.querySelectorAll('body > *:not(.modal)').forEach(el => el.setAttribute('inert', ''));
+                if (focusEl) focusEl.focus();
+                document.body.style.overflow = 'hidden';
+                document.addEventListener('keydown', trapTabKey);
+            }
+
+            function closeModal(modal) {
+                if (!modal) return;
+                modal.setAttribute('aria-hidden', 'true');
+                modal.classList.remove('is-open');
+                
+                // Clear search in closed modal for a clean reopen
+                modal.querySelectorAll('.modal-search-input').forEach(input => {
+                    if (input.value) {
+                        input.value = '';
+                        input.dispatchEvent(new Event('input')); // Trigger filter update
+                    }
+                });
+
+                if (modal._prevFocus) modal._prevFocus.focus();
+                document.body.style.overflow = '';
+                document.querySelectorAll('[inert]').forEach(el => el.removeAttribute('inert'));
+                document.removeEventListener('keydown', trapTabKey);
+            }
+
+            // Attach open listeners
+            openButtons.forEach(btn => {
+                const modalId = btn.dataset.modal;
+                const modal = document.getElementById(modalId);
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(modal);
+                });
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal(modal);
+                    }
+                });
+            });
+
+            // Attach close listeners (backdrop, close buttons, footer close, clear buttons)
+            document.addEventListener('click', (e) => {
+                const clicked = e.target;
+                const closeAttr = clicked.closest('[data-close="true"]');
+                if (closeAttr) {
+                    const modal = clicked.closest('.modal');
+                    if (modal) closeModal(modal);
+                }
+                const clearBtn = clicked.closest('[data-action="clear-search"]');
+                if (clearBtn) {
+                    const target = document.querySelector(clearBtn.dataset.target);
+                    if (target) {
+                        target.value = '';
+                        target.dispatchEvent(new Event('input'));
+                        target.focus();
+                    }
+                }
+            });
+
+            // Close on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const openModalEl = document.querySelector('.modal.is-open');
+                    if (openModalEl) closeModal(openModalEl);
+                }
+            });
+
+            // Simple tab trap inside modal
+            function trapTabKey(e) {
+                if (e.key !== 'Tab') return;
+                const openModalEl = document.querySelector('.modal.is-open');
+                if (!openModalEl) return;
+                const focusable = openModalEl.querySelectorAll('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])');
+                if (!focusable.length) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey) {
+                    if (document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    }
+                } else {
+                    if (document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            }
+
+            // Search filtering helper (works with rows)
+            function attachTableSearch(inputSelector, tableSelector) {
+                const input = document.querySelector(inputSelector);
+                const table = document.querySelector(tableSelector);
+                if (!input || !table) return;
+                const tbody = table.tBodies[0];
+                if (!tbody) return;
+                const rows = Array.from(tbody.rows);
+
+                input.addEventListener('input', () => {
+                    const val = input.value.trim().toLowerCase();
+                    let visibleCount = 0;
+                    rows.forEach(r => {
+                        const text = Array.from(r.cells).map(c => (c.textContent || '').trim().toLowerCase()).join(' ');
+                        const match = text.includes(val);
+                        r.style.display = match ? '' : 'none';
+                        if (match) visibleCount++;
+                    });
+
+                    const wrapper = table.closest('.modal-table-wrapper');
+                    if (wrapper) {
+                        // Announce search results to screen readers
+                        const announcement = val
+                            ? (visibleCount === 0 ? 'No results for ' + val : visibleCount + (visibleCount === 1 ? ' result' : ' results') + ' for ' + val)
+                            : visibleCount + (visibleCount === 1 ? ' result' : ' results');
+                        wrapper.setAttribute('aria-label', announcement);
+                    }
+                });
+            }
+
+            // Attach searches for all modals (Includes Impurities)
+            attachTableSearch('#api-search', '#api-table');
+            attachTableSearch('#peptides-search', '#peptides-table');
+            attachTableSearch('#granules-search', '#granules-table');
+            attachTableSearch('#nutra-search', '#nutra-table');
+            attachTableSearch('#neuro-search', '#neuro-table');
+            attachTableSearch('#cbd-search', '#cbd-table');
+            attachTableSearch('#impurities-search', '#impurities-table'); // NEW SEARCH
+
+            // Accessibility: keep focus inside modal (focusin approach)
+            document.addEventListener('focusin', (e) => {
+                const openModalEl = document.querySelector('.modal.is-open');
+                if (!openModalEl) return;
+                if (!openModalEl.contains(e.target)) {
+                    // Try to focus the search input, or fall back to the close button
+                    const focusEl = openModalEl.querySelector('.modal-search-input') || openModalEl.querySelector('.modal-close');
+                    if (focusEl) focusEl.focus();
+                }
+            });
+
+            // Prevent accidental page scroll when wheel reaches modal table top/bottom
+            const modalPanels = document.querySelectorAll('.modal-panel');
+            modalPanels.forEach(panel => {
+                panel.addEventListener('wheel', (e) => {
+                    const scrollable = panel.querySelector('.modal-table-wrapper');
+                    if (!scrollable) return;
+                    const atTop = scrollable.scrollTop === 0 && e.deltaY < 0;
+                    const atBottom = Math.round(scrollable.scrollTop + scrollable.clientHeight) >= scrollable.scrollHeight && e.deltaY > 0;
+                    if (atTop || atBottom) e.preventDefault();
+                }, { passive: false });
+            });
+
+        })();
+    </script>
+</body>
+</html>

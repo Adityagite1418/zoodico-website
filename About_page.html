@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Zoodico Pharma</title>
+  <link rel="stylesheet" href="About_page.css" />
+</head> 
+<body>
+  <!-- Header --> 
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="Images/Logo/Zoodico_Logo.jpeg" alt="Zoodico Pharma Logo" />
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About_page.html" class="active">About Us</a></li>
+          <li><a href="Products_page.html">Products</a></li>
+          <li><a href="Contact_page.html">Contact Us</a></li>
+          <li><a href="index.html#media">Media</a></li>
+          <li><a href="index.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="about-hero">
+    <div class="about-overlay">
+      <h1>About Us</h1>
+      <p>Committed to improving global health through innovation and integrity.</p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="section">
+    <div class="container grid-2 about-content">
+      <div>
+        <h2>Who We Are</h2>
+        <p>
+          Zoodico Pharma Pvt. Ltd. is a globally oriented Indian pharmaceutical company with over 
+          <strong>20 years of expertise</strong> in manufacturing, marketing, and exporting high-quality 
+          <strong>Active Pharmaceutical Ingredients (APIs)</strong>, Finished Formulations, and Raw Materials 
+          such as Intermediates, Excipients, Granules, and Pellets.
+        </p>
+
+        <p>
+          We provide complete end-to-end pharmaceutical solutions — from sourcing and regulatory support 
+          to global logistics, machinery supply, and turnkey project execution for manufacturing units.
+        </p>
+
+        <p>
+          Operating through <strong>WHO-GMP, EU-GMP, US-FDA, ANVISA,</strong> and <strong>ISO-certified facilities</strong>, 
+          we ensure world-class quality and compliance. With a strong global presence in over 
+          <strong>1,400 clients</strong> across the Middle East, Africa, Latin America, CIS, EU, US, and Southeast Asia, 
+          we are recognized for our reliability, transparency, and customer-focused service.
+        </p>
+
+        <p>
+          We are dedicated to building long-term partnerships and delivering 
+          <strong>innovative, cost-effective pharmaceutical solutions</strong> worldwide.
+        </p>
+
+        <a href="index.html" class="btn">← Back to Home</a>
+      </div>
+
+      <div class="about-image">
+        <img src="Images/BackGrond/image_3.png" alt="About Zoodico Pharma" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision and Mission Section -->
+  <section class="section vision-mission">
+    <div class="container grid-2">
+
+      <!-- Vision Card -->
+      <div class="card vision-card">
+        <h2>Our Vision</h2>
+        <p>
+          To emerge as a <strong>globally admired pharmaceutical contract manufacturer</strong> and 
+          export house, setting benchmarks in <strong>quality</strong>, <strong>reliability</strong>, 
+          and <strong>innovation</strong> — dedicated to advancing pharmaceutical excellence and fostering 
+          enduring partnerships across continents with <strong>integrity</strong> and <strong>trust</strong>.
+        </p>
+
+        <div class="vision-extra-image">
+          <img src="Images/BackGrond/image_4.png" alt="Vision Background" />
+        </div>
+      </div>
+
+      <!-- Mission Card -->
+      <div class="card mission-card">
+        <h2>Our Mission</h2>
+        <p>
+          To be a <strong>global leader</strong> in pharmaceutical exports and contract manufacturing, 
+          delivering trusted <strong>quality</strong> and <strong>value</strong> through 
+          <strong>innovation</strong>, <strong>integrity</strong>, and enduring partnerships.
+        </p>
+
+        <div class="mission-extra-image">
+          <img src="Images/BackGrond/image_5.png" alt="Mission Extra Image" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>© 2025 Zoodico Pharma | zoodicopharma1212@gmail.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.querySelector(".nav ul");
+    menuBtn.onclick = () => nav.classList.toggle("show");
+  </script>
+</body>
+</html>

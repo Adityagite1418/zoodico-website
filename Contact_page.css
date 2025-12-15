@@ -1,0 +1,174 @@
+/* ================= CONTACT BANNER ================= */
+.contact-banner {
+    background: var(--orange);
+    color: white;
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.contact-banner h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.contact-banner p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+}
+
+/* ================= GRID LAYOUT ================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+/* ================= CONTACT DETAILS ================= */
+.contact-details {
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.details-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.details-group i {
+    color: var(--orange);
+    font-size: 1.4rem;
+}
+
+/* Map */
+.map-container {
+    margin-top: 2rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* ================= FEEDBACK ALERT BOXES ================= */
+.success-alert,
+.error-alert {
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    display: flex;
+    gap: .8rem;
+}
+
+.success-alert {
+    background: #e6ffed;
+    color: #006c1a;
+}
+
+.error-alert {
+    background: #ffe6e6;
+    color: #cc0000;
+}
+
+/* ================= CHATBOT WIDGET ================= */
+#chatbot-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#chat-toggle {
+    background: var(--orange);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#chat-window {
+    width: 350px;
+    background: white;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.chat-closed {
+    opacity: 0;
+    transform: scale(0.8);
+    visibility: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+    background: var(--orange);
+    color: white;
+    padding: 15px;
+}
+
+/* Chat Body */
+.chat-body {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8f8f8;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.bot-message {
+    background: #e9e9eb;
+}
+
+.user-message {
+    background: var(--orange);
+    color: white;
+    margin-left: auto;
+}
+
+/* Footer */
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+#chat-send {
+    background: var(--orange);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
