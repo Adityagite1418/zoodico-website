@@ -144,7 +144,7 @@ body {
 /* ============================================================== */
 
 /* Banner */
-.prod-banner{ height:60vh; min-height:420px; background: url("Images/BackGrond/image_6.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.prod-banner{ height:60vh; min-height:420px; background: url("image_6.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
 .prod-banner-overlay{ position:absolute; inset:0; background: linear-gradient(135deg, rgba(0,153,255,0.07), rgba(255,255,255,0.06)); backdrop-filter: blur(2px) brightness(1.02); z-index:1; }
 .prod-banner-content{ position:relative; z-index:2; background:var(--glass); padding:2rem 3rem; border-radius:18px; backdrop-filter: blur(14px) saturate(1.05); text-align:center; max-width:920px; box-shadow: 0 12px 40px rgba(15,23,32,0.06); }
 .prod-banner-content h1{ font-size:2.6rem; font-weight:800; color:var(--navy); margin-bottom:0.4rem; }
@@ -190,16 +190,16 @@ body {
 }
 
 /* Individual Card Backgrounds */
-.prod-card-api{ background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.03)), url("Images/BackGrond/image_7.png") center/cover no-repeat; background-size: cover; }
-.prod-card-granules { background: url("Images/BackGrond/image_8.PNG") center/cover no-repeat; background-size: cover; }
-.prod-card-peptides { background: url("Images/BackGrond/image_9.PNG") center/cover no-repeat; background-size: cover; }
-.prod-card-nutra { background: url('Images/BackGrond/image_11.PNG') center/cover no-repeat; background-size: cover; }
-.prod-card-cbd { background: url('Images/BackGrond/image_10.PNG') center/cover no-repeat; background-size: cover; }
+.prod-card-api{ background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.03)), url("image_7.png") center/cover no-repeat; background-size: cover; }
+.prod-card-granules { background: url("image_8.PNG") center/cover no-repeat; background-size: cover; }
+.prod-card-peptides { background: url("image_9.PNG") center/cover no-repeat; background-size: cover; }
+.prod-card-nutra { background: url('image_11.PNG') center/cover no-repeat; background-size: cover; }
+.prod-card-cbd { background: url('image_10.PNG') center/cover no-repeat; background-size: cover; }
 
 /* UPDATED: Impurities Card Background - Using the exact path requested */
 .prod-card-impurities { 
     background: linear-gradient(rgba(7, 17, 39, 0.4), rgba(7, 17, 39, 0.3)), 
-    url('Images/BackGrond/image_12.png') center/cover no-repeat; 
+    url('image_12.png') center/cover no-repeat; 
     background-size: cover; 
 }
 
@@ -366,4 +366,5 @@ body {
     .modal-header h3{ font-size:1rem; }
     .prod-card img{ height:120px; }
     .prod-card{ padding:1rem; min-height:180px; }
+
 }
