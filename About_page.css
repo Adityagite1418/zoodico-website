@@ -99,7 +99,7 @@ body {
 /* ABOUT HERO */
 .about-hero {
   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-              url("Images/BackGrond/image_2.png") center/cover no-repeat;
+              url("image_2.png") center/cover no-repeat;
   height: 70vh;
   display: flex;
   align-items: center;
@@ -329,3 +329,4 @@ body {
     height: 240px;
   }
 }
+
