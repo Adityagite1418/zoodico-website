@@ -102,7 +102,7 @@ body {
 .hero {
   position: relative;
   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-              url("Images/BackGrond/image_1.png") center/cover no-repeat;
+              url("image_1.png") center/cover no-repeat;
   height: 75vh;
   display: flex;
   align-items: center;
@@ -216,3 +216,4 @@ body {
     font-size: 1.8rem;
   }
 }
+
