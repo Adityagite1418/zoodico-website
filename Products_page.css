@@ -191,10 +191,10 @@ body {
 
 /* Individual Card Backgrounds */
 .prod-card-api{ background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.03)), url("image_7.png") center/cover no-repeat; background-size: cover; }
-.prod-card-granules { background: url("image_8.png") center/cover no-repeat; background-size: cover; }
-.prod-card-peptides { background: url("image_9.png") center/cover no-repeat; background-size: cover; }
-.prod-card-nutra { background: url('image_11.PNG') center/cover no-repeat; background-size: cover; }
-.prod-card-cbd { background: url('image_10.PNG') center/cover no-repeat; background-size: cover; }
+.prod-card-granules { background: url("image_8.PNG") center/cover no-repeat; background-size: cover; }
+.prod-card-peptides { background: url("image_9.PNG") center/cover no-repeat; background-size: cover; }
+.prod-card-nutra { background: url('image_11.png') center/cover no-repeat; background-size: cover; }
+.prod-card-cbd { background: url('image_10.png') center/cover no-repeat; background-size: cover; }
 
 /* UPDATED: Impurities Card Background - Using the exact path requested */
 .prod-card-impurities { 
@@ -368,5 +368,6 @@ body {
     .prod-card{ padding:1rem; min-height:180px; }
 
 }
+
 
 
