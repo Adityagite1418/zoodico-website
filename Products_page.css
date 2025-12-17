@@ -6,7 +6,7 @@
     --orange: #f58220;
     --text: #111;
     --light: #f9f9f9;
-    --glass: rgba(255, 255, 255, 0.75); 
+    --glass: rgba(255, 255, 255, 0.75); /* Added for better visibility in glass effect */
     --navy: #071127;
 
     /* Sizing & Spacing */
@@ -16,7 +16,7 @@
     /* Shadows */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-    /* Modal Sizing */
+    /* Modal Sizing (New/Optimized) */
     --modal-width: 900px;
     --modal-max-width: 90vw;
 }
@@ -86,6 +86,7 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Orange Hover/Active Color and Underline Effect */
 .nav a::after {
     content: "";
     position: absolute;
@@ -99,9 +100,9 @@ body {
 
 .nav a:hover,
 .nav a.active,
-.nav a:focus {
+.nav a:focus { /* Added :focus for accessibility */
     color: var(--orange);
-    outline: none;
+    outline: none; /* Remove default focus outline */
 }
 
 .nav a:hover::after,
@@ -116,8 +117,9 @@ body {
     border: none;
     color: var(--text);
     cursor: pointer;
-    line-height: 1;
+    line-height: 1; /* Ensure clean alignment */
 }
+
 
 /* ============================================================== */
 /* ⭐ FOOTER STYLES ⭐ */
@@ -132,125 +134,230 @@ body {
     font-weight: 500;
 }
 
+.footer-container p {
+    margin: 0;
+}
+
+
 /* ============================================================== */
-/* ⭐ PRODUCT PAGE SPECIFIC STYLES ⭐ */
+/* ⭐ PRODUCT PAGE SPECIFIC STYLES (MODALS, CARDS, BANNER) ⭐ */
 /* ============================================================== */
 
 /* Banner */
-.prod-banner { 
-    height: 60vh; 
-    min-height: 420px; 
-    background: url("image_6.png") center/cover no-repeat; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    position: relative; 
-    overflow: hidden; 
-}
+.prod-banner{ height:60vh; min-height:420px; background: url("image_6.png") center/cover no-repeat; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.prod-banner-overlay{ position:absolute; inset:0; background: linear-gradient(135deg, rgba(0,153,255,0.07), rgba(255,255,255,0.06)); backdrop-filter: blur(2px) brightness(1.02); z-index:1; }
+.prod-banner-content{ position:relative; z-index:2; background:var(--glass); padding:2rem 3rem; border-radius:18px; backdrop-filter: blur(14px) saturate(1.05); text-align:center; max-width:920px; box-shadow: 0 12px 40px rgba(15,23,32,0.06); }
+.prod-banner-content h1{ font-size:2.6rem; font-weight:800; color:var(--navy); margin-bottom:0.4rem; }
+.prod-banner-content p{ font-size:1.05rem; opacity:.95; }
 
-.prod-banner-overlay { 
-    position: absolute; 
-    inset: 0; 
-    background: linear-gradient(135deg, rgba(0,153,255,0.07), rgba(255,255,255,0.06)); 
-    backdrop-filter: blur(2px) brightness(1.02); 
-    z-index: 1; 
-}
+/* Section Title & Grid */
+.prod-section{ padding:3rem 0; background:var(--light); }
+.prod-title{ text-align:center; margin-bottom:1.6rem; font-size:1.8rem; font-weight:700; color:var(--navy); }
+.prod-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:1.6rem; align-items:stretch; }
 
-.prod-banner-content { 
-    position: relative; 
-    z-index: 2; 
-    background: var(--glass); 
-    padding: 2rem 3rem; 
-    border-radius: 18px; 
-    backdrop-filter: blur(14px) saturate(1.05); 
-    text-align: center; 
-    max-width: 920px; 
-    box-shadow: 0 12px 40px rgba(15,23,32,0.06); 
-}
+/* Cards - base */
+.prod-card{ background:white; padding:1.35rem; border-radius:var(--radius); box-shadow:var(--shadow); text-align:center; transition: transform .28s ease, box-shadow .28s ease; display:flex; flex-direction:column; gap:0.85rem; justify-content:flex-start; min-height:220px; }
+.prod-card:hover{ transform:translateY(-6px); box-shadow: 0 22px 60px rgba(15,23,32,0.10); }
 
-/* Grid & Title */
-.prod-section { padding: 3rem 0; background: var(--light); }
-.prod-title { text-align: center; margin-bottom: 1.6rem; font-size: 1.8rem; font-weight: 700; color: var(--navy); }
-.prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.6rem; }
-
-/* Cards */
-.prod-card { 
-    background: white; 
-    padding: 1.35rem; 
-    border-radius: var(--radius); 
-    box-shadow: var(--shadow); 
-    text-align: center; 
-    transition: transform .28s ease, box-shadow .28s ease; 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 220px; 
-}
-
-.prod-card:hover { transform: translateY(-6px); box-shadow: 0 22px 60px rgba(15,23,32,0.10); }
-
-/* Card Image Styles (Corrected file extensions based on your list) */
-.prod-card-image {
-    height: 260px;
+/* Standard Card Button (used for Neurology card) */
+.prod-card-standard-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: var(--radius);
+    flex-direction: column;
+    gap: 0.85rem;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+}
+.prod-card-standard-btn img{ width:100%; height:160px; object-fit:cover; border-radius:10px; display:block; }
+.prod-card-standard-btn h3{ font-size:1.1rem; font-weight:700; color:var(--navy); }
+.prod-card-standard-btn p{ font-size:0.95rem; color:#1f2937; }
+
+
+/* Styles for cards with background images */
+.prod-card-image {
+    height:260px;
+    min-height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    overflow:hidden;
+    border: none !important;
 }
 
-/* INDIVIDUAL BACKGROUNDS - MATCHING YOUR FILE LIST EXACTLY */
-.prod-card-api { 
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("image_7.png") center/cover no-repeat; 
-}
-.prod-card-granules { 
-    background: url("image_8.PNG") center/cover no-repeat; 
-}
-.prod-card-peptides { 
-    background: url("image_9.PNG") center/cover no-repeat; 
-}
-.prod-card-nutra { 
-    background: url("image_11.png") center/cover no-repeat; 
-}
-.prod-card-cbd { 
-    background: url("image_10.png") center/cover no-repeat; 
-}
+/* Individual Card Backgrounds - FIXED PATHS */
+.prod-card-api{ background: linear-gradient(rgba(0,0,0,0.04), rgba(0,0,0,0.03)), url("image_7.png") center/cover no-repeat; }
+.prod-card-granules { background: url("image_8.PNG") center/cover no-repeat; }
+.prod-card-peptides { background: url("image_9.PNG") center/cover no-repeat; }
+.prod-card-nutra { background: url('image_11.png') center/cover no-repeat; }
+.prod-card-cbd { background: url('image_10.png') center/cover no-repeat; }
 .prod-card-impurities { 
-    background: linear-gradient(rgba(7, 17, 39, 0.4), rgba(7, 17, 39, 0.3)), url("image_12.png") center/cover no-repeat; 
+    background: linear-gradient(rgba(7, 17, 39, 0.4), rgba(7, 17, 39, 0.3)), 
+    url('image_12.png') center/cover no-repeat; 
 }
 
-/* Card Content Overlay */
+
+/* Inner content button for image cards */
 .prod-card-content {
     background: var(--glass);
-    padding: 1.25rem;
+    padding: 1.25rem 1.5rem;
     border-radius: 12px;
     backdrop-filter: blur(10px);
+    text-align: center;
     border: 1px solid rgba(255,255,255,0.45);
     width: 90%;
     cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
 }
+
+.prod-card-content h3{ margin:0; font-size:1.25rem; color:var(--text); }
+.prod-card-content p{ margin:0; font-size:0.95rem; color:#1f2937; }
+
+
+/* View list/search button style inside cards */
+.view-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--orange);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Buttons (Modal/Utility) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius);
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--orange);
+    color: white;
+    box-shadow: 0 8px 20px rgba(245, 130, 32, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #ff9933;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(245, 130, 32, 0.35);
+}
+
+.btn-secondary{
+    background:#eef2f6;
+    color:#0b1720;
+    box-shadow: none;
+    transform: none;
+    padding: .55rem .8rem;
+}
+.btn-secondary:hover{
+    background: #e2e8f0;
+    transform: none;
+    box-shadow: none;
+}
+
 
 /* ============================================================== */
 /* ⭐ MODAL STYLES ⭐ */
 /* ============================================================== */
-.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 1500; }
-.modal.is-open { display: flex; }
-.modal-backdrop { position: absolute; inset: 0; background: rgba(6,18,30,0.48); backdrop-filter: blur(4px); }
-.modal-panel { position: relative; width: var(--modal-width); max-width: var(--modal-max-width); background: white; border-radius: 16px; overflow: hidden; }
+.modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:1500; transition: opacity .28s ease; }
+.modal.is-open{ display:flex; }
+.modal-backdrop{ position:absolute; inset:0; background: rgba(6,18,30,0.48); backdrop-filter: blur(4px) saturate(1.02); cursor:pointer; }
+.modal-panel{ position:relative; width:var(--modal-width); max-width:var(--modal-max-width); background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96)); border-radius:16px; box-shadow: 0 28px 80px rgba(6,18,30,0.18); overflow:hidden; transform:translateY(-8px) scale(.985); opacity:0; transition: transform .28s cubic-bezier(.2,.9,.35,1), opacity .28s ease; }
+.modal.is-open .modal-panel{ transform:translateY(0) scale(1); opacity:1; }
 
-.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid #eee; }
-.modal-body { padding: 1rem 1.25rem; max-height: 65vh; overflow-y: auto; }
+/* Modal header */
+.modal-header{ display:flex; align-items:center; justify-content:space-between; padding:1rem 1.25rem; border-bottom:1px solid rgba(15,23,32,0.04); }
+.modal-header h3{ font-size:1.05rem; font-weight:800; color:var(--navy); }
+.modal-close{ background:none; border:0; font-size:1.1rem; cursor:pointer; padding:.25rem .5rem; }
 
-.modal-table-wrapper { overflow-x: auto; }
-.modal-table { width: 100%; border-collapse: collapse; }
-.modal-table thead th { background: var(--orange); color: white; padding: 0.75rem; text-align: left; position: sticky; top: 0; }
-.modal-table td { padding: 0.75rem; border-bottom: 1px solid #f1f5f9; }
+/* Modal body */
+.modal-body{ padding:1rem 1.25rem; max-height:65vh; overflow:hidden; display:flex; flex-direction:column; gap:0.85rem; }
+
+/* Search inside modal */
+.modal-search{ display:flex; gap:.6rem; align-items:center; margin-bottom:.4rem; }
+.modal-search-input{ width:100%; padding:.6rem .75rem; border-radius:10px; border:1px solid #e2e8f0; outline:none; font-size:0.95rem; box-shadow:none; }
+.modal-search-input:focus{ box-shadow:0 6px 20px rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.38); }
+
+/* Table wrapper — scrollable area */
+.modal-table-wrapper{ overflow:auto; border-radius:10px; background:white; padding:.5rem; box-shadow:0 8px 20px rgba(2,6,23,0.04); }
+
+/* Tables */
+.modal-table{ width:100%; border-collapse:collapse; min-width:420px; }
+.modal-table thead th{ position:sticky; top:0; background:var(--orange); color:white; text-align:left; padding:.7rem .9rem; font-weight:700; z-index:2; }
+.modal-table tbody td{ padding:.6rem .9rem; border-bottom:1px solid #f1f5f9; font-size:.95rem; color:#0b1720; }
+
+/* Modal footer */
+.modal-footer{ padding:0.9rem 1.25rem; border-top:1px solid rgba(15,23,32,0.04); display:flex; justify-content:flex-end; gap:.6rem; }
+
 
 /* ============================================================== */
-/* ⭐ RESPONSIVE ⭐ */
+/* ⭐ RESPONSIVE STYLES ⭐ */
 /* ============================================================== */
-@media (max-width: 768px) {
-    .nav ul { display: none; }
-    .nav ul.show { display: flex; flex-direction: column; position: absolute; top: 80px; right: 1rem; background: white; padding: 1rem; width: 200px; box-shadow: var(--shadow); }
-    .menu-toggle { display: block; }
-    .prod-banner { height: 45vh; }
+
+@media (max-width: 768px){
+    :root{
+        --modal-width: 94vw;
+        --modal-max-width: 94vw;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 86px;
+        right: 1rem;
+        background: white;
+        width: 220px;
+        padding: 1rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        gap: 0.6rem;
+    }
+
+    .nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.6rem;
+    }
+
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+    .logo img {
+        height: 60px;
+    }
+
+    .modal-panel{ max-height:92vh; }
+    .modal-body{ max-height:63vh; }
+    .modal-table{ min-width:unset; }
+
+    .prod-banner{ height:48vh; min-height:320px; }
+    .prod-banner-content{ padding:1.25rem 1.3rem; }
+    .prod-grid{ gap:1rem; }
+}
+
+@media (max-width:420px){
+    .prod-banner-content h1{ font-size:1.6rem; }
+    .modal-header h3{ font-size:1rem; }
+    .prod-card img{ height:120px; }
+    .prod-card{ padding:1rem; min-height:180px; }
 }
