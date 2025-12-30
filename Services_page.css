@@ -7,12 +7,12 @@
 }
 
 .services-banner h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin-bottom: 0.6rem;
 }
 
 .services-banner p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   opacity: 0.95;
 }
 
@@ -43,19 +43,19 @@
 }
 
 .service-card i {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   color: var(--orange);
   margin-bottom: 1rem;
 }
 
 .service-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin-bottom: 0.8rem;
   color: var(--text);
 }
 
 .service-card p {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   color: #444;
   line-height: 1.6;
 }
