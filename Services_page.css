@@ -1,0 +1,72 @@
+/* ================= SERVICES BANNER ================= */
+.services-banner {
+  background: var(--orange);
+  color: white;
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.services-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.services-banner p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* ================= SERVICES SECTION ================= */
+.services-section {
+  padding: 3.5rem 0;
+  background: var(--light);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* ================= SERVICE CARD ================= */
+.service-card {
+  background: white;
+  padding: 2rem 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.service-card p {
+  font-size: 0.98rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .services-banner h1 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 1.6rem;
+  }
+}
