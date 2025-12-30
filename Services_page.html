@@ -5,25 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | Zoodico Pharma</title>
 
-  <!-- MAIN CSS -->
-  <link rel="stylesheet" href="Main_Page.css" />
+  <!-- MAIN CSS (GLOBAL) -->
+  <link rel="stylesheet" href="Main_page.css" />
 
-  <!-- SERVICES CSS -->
+  <!-- SERVICES PAGE CSS -->
   <link rel="stylesheet" href="Services_page.css" />
 
   <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 
 <body>
 
-<!-- ================= HEADER (EXACT SAME AS HOME) ================= -->
+<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container nav-container">
 
     <div class="logo">
-      <img src="Images/Logo/Zoodico_Logo.jpeg" alt="Zoodico Pharma Logo" />
+      <img src="Zoodico_Logo.jpeg" alt="Zoodico Pharma Logo">
     </div>
 
     <nav class="nav">
@@ -31,14 +33,12 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="About_page.html">About Us</a></li>
         <li><a href="Products_page.html">Products</a></li>
-        <li><a href="Contact_page.html">Contact Us</a></li>
         <li><a href="Services_page.html" class="active">Services</a></li>
-        <li><a href="#media">Media</a></li>
+        <li><a href="Contact_page.html">Contact Us</a></li>
       </ul>
     </nav>
 
     <button class="menu-toggle" id="menuBtn">☰</button>
-
   </div>
 </header>
 
@@ -50,25 +50,25 @@
   </div>
 </section>
 
-<!-- ================= SERVICES CONTENT ================= -->
+<!-- ================= SERVICES SECTION ================= -->
 <section class="services-section">
   <div class="container services-grid">
 
     <div class="service-card">
       <i class="fa-solid fa-capsules"></i>
-      <h3>Pharmaceutical Sourcing Solutions</h3>
+      <h3>Pharmaceutical Sourcing</h3>
       <p>
-        End-to-end sourcing of APIs, Excipients, Pellets, Granules, and Intermediates
-        from WHO-GMP / ISO compliant manufacturers with reliable global supply chains.
+        Reliable sourcing of APIs, Excipients, Pellets, Granules, and Intermediates
+        from WHO-GMP & ISO-certified manufacturers.
       </p>
     </div>
 
     <div class="service-card">
       <i class="fa-solid fa-file-signature"></i>
-      <h3>Regulatory Affairs & Documentation</h3>
+      <h3>Regulatory Affairs</h3>
       <p>
-        Preparation, review, and submission of CTD / eCTD dossiers, DMFs,
-        and country-specific regulatory documentation for smooth approvals.
+        CTD / eCTD dossiers, DMFs, and regulatory documentation for global markets
+        ensuring faster approvals.
       </p>
     </div>
 
@@ -76,17 +76,17 @@
       <i class="fa-solid fa-industry"></i>
       <h3>Contract Manufacturing</h3>
       <p>
-        Third-party manufacturing services covering formulation, scale-up,
-        quality compliance, packaging, and commercial production.
+        End-to-end third-party manufacturing with quality assurance,
+        scale-up, packaging, and compliance.
       </p>
     </div>
 
     <div class="service-card">
       <i class="fa-solid fa-cogs"></i>
-      <h3>Turnkey Projects & Machinery</h3>
+      <h3>Turnkey Pharma Projects</h3>
       <p>
-        Complete pharmaceutical turnkey solutions including facility design,
-        machinery supply, installation, and commissioning aligned with GMP.
+        Complete turnkey solutions including plant design,
+        machinery supply, installation, and GMP commissioning.
       </p>
     </div>
 
@@ -95,7 +95,7 @@
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="container footer-container">
+  <div class="container">
     <p>© 2025 Zoodico Pharma | zoodicopharma1212@gmail.com</p>
   </div>
 </footer>
@@ -104,9 +104,10 @@
 <script>
   const menuBtn = document.getElementById("menuBtn");
   const nav = document.querySelector(".nav ul");
-  menuBtn.onclick = () => nav.classList.toggle("show");
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
 </script>
 
 </body>
 </html>
-
